@@ -25,14 +25,13 @@ public class MainActivity extends AppCompatActivity {
     EditText editText;
     TextView logTextView;
     ScrollView scrollView;
-    TextInputLayout inputLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         answerArr = generateAnswer();
-        inputLayout = findViewById(R.id.inputLayout);
+        TextInputLayout inputLayout = findViewById(R.id.inputLayout);
         editText = inputLayout.getEditText();
         logTextView = findViewById(R.id.logTextView);
         scrollView = findViewById(R.id.scrollView2);
@@ -60,8 +59,6 @@ public class MainActivity extends AppCompatActivity {
                     String result = checkCorrect(guess);
                     if (result.equals("4A0B")) {
                         editText.setEnabled(false);
-                        editText.clearFocus();
-                        inputLayout.clearFocus();
                         editText.setText("");
                         logTextView.setText(getString(R.string.correct_message, logTextView.getText(), builder.toString()));
                     } else {
@@ -91,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.restartAction:
                 answerArr = generateAnswer();
+                editText.setEnabled(false);
                 editText.setEnabled(true);
                 InputMethodManager manager = (InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);
                 manager.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
@@ -99,6 +97,18 @@ public class MainActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        editText.setEnabled(true);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        editText.setEnabled(false);
     }
 
     private ArrayList<Integer> generateAnswer() {
