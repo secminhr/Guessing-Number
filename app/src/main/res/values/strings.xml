@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">GuessingNumber</string>
+    <string name="app_name">GuessingNumber</string>
     <string name="correct_message">%1$sCorrect!! The Answer is: %2$s\n</string>
     <string name="log_message">%1$sYour guess: %2$s. Result: %3$s\n</string>
     <string name="guess">Guess</string>
