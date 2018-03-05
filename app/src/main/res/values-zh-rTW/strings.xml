@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GuessingNumber</string>
+    <string name="log_message">%1$s你猜的數字: %2$s. 結果: %3$s\n</string>
+    <string name="correct_message">%1$s答對啦!! 答案是: %2$s\n</string>
+    <string name="guess">猜</string>
+    <string name="submit">確定</string>
+    <string name="not_repeated">數字將不會重複</string>
+</resources>
