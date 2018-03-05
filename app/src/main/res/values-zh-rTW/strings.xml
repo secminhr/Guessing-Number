@@ -6,4 +6,5 @@
     <string name="guess">猜</string>
     <string name="submit">確定</string>
     <string name="not_repeated">數字將不會重複</string>
+    <string name="restart">重新開始</string>
 </resources>
