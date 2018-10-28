@@ -117,9 +117,8 @@ public class MainActivity extends AppCompatActivity {
                 add(i);
             }
         }};
-        while(digits.get(0) == 0) {
-            Collections.shuffle(digits);
-        }
+        Collections.shuffle(digits);
+        
         System.err.println(digits);
         return new ArrayList<>(digits.subList(0, 4));
     }
